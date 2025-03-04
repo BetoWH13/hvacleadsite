@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hvacleadsite.netlify.app/sitemap.xml
+
