@@ -2,5 +2,5 @@
   command = "npm run build"
   publish = ".next"
 
-[context.production]
-  base = "master"
+[build.environment]
+  NODE_VERSION = "18"
