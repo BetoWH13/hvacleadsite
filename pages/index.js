@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import { FaWrench, FaSnowflake, FaFire, FaMapMarkerAlt } from "react-icons/fa";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 
 export default function HVACLeadForm() {
   const [zipCode, setZipCode] = useState('');
