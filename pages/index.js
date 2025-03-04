@@ -43,50 +43,52 @@ export default function HVACLeadForm() {
           <p className="mt-3 text-gray-700">If you're experiencing any of these issues, enter your ZIP code below to find an <strong>HVAC repair technician near you</strong> today!</p>
         </div>
 
-        <Card className="max-w-md w-full p-6 bg-white text-gray-800 shadow-lg rounded-2xl mt-8">
-          <CardContent>
-            <h1 className="text-3xl font-bold mb-4 text-center flex items-center justify-center gap-2">
-              <FaWrench /> Find a Local HVAC Technician Near You
-            </h1>
-            {submitted ? (
-              <div className="text-center">
-                <p className="text-green-600 font-semibold">Your request has been submitted! A technician will contact you shortly.</p>
-                <a 
-                  href="//leads.leadsmartinc.com/?api_key=8a982b9fc74db2f93fd5f65045f5a1e370ca59ff&affiliate_source=albertowaizel1&category=8&funnel=3&buttons=btn-success&step=1" 
-                  className="mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
-                >Find a Technician</a>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <label className="block">
-                  <span className="text-gray-700">Enter Your ZIP Code</span>
-                  <div className="flex items-center border rounded-lg shadow-sm p-2">
-                    <FaMapMarkerAlt className="text-gray-500 mr-2" />
+        <div className="flex justify-center">
+          <Card className="max-w-md w-full p-6 bg-white text-gray-800 shadow-lg rounded-2xl mt-8">
+            <CardContent>
+              <h1 className="text-3xl font-bold mb-4 text-center flex items-center justify-center gap-2">
+                <FaWrench /> Find a Local HVAC Technician Near You
+              </h1>
+              {submitted ? (
+                <div className="text-center">
+                  <p className="text-green-600 font-semibold">Your request has been submitted! A technician will contact you shortly.</p>
+                  <a 
+                    href="//leads.leadsmartinc.com/?api_key=8a982b9fc74db2f93fd5f65045f5a1e370ca59ff&affiliate_source=albertowaizel1&category=8&funnel=3&buttons=btn-success&step=1" 
+                    className="mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+                  >Find a Technician</a>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <label className="block">
+                    <span className="text-gray-700">Enter Your ZIP Code</span>
+                    <div className="flex items-center border rounded-lg shadow-sm p-2">
+                      <FaMapMarkerAlt className="text-gray-500 mr-2" />
+                      <input 
+                        type="text" 
+                        className="w-full focus:outline-none" 
+                        value={zipCode} 
+                        onChange={(e) => setZipCode(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </label>
+                  <label className="block">
+                    <span className="text-gray-700">Enter Your Email</span>
                     <input 
-                      type="text" 
-                      className="w-full focus:outline-none" 
-                      value={zipCode} 
-                      onChange={(e) => setZipCode(e.target.value)}
+                      type="email" 
+                      className="mt-1 block w-full px-3 py-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-300"
+                      value={email} 
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                     />
-                  </div>
-                </label>
-                <label className="block">
-                  <span className="text-gray-700">Enter Your Email</span>
-                  <input 
-                    type="email" 
-                    className="mt-1 block w-full px-3 py-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-300"
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </label>
-                <p className="text-xs text-gray-500">By submitting, you acknowledge that we are **not HVAC technicians** but an independent affiliate connecting customers with local service providers. See our <a href="/privacy-policy" className="underline">Privacy Policy</a> for details.</p>
-                <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-2 rounded-lg hover:opacity-90">Find a Technician</Button>
-              </form>
-            )}
-          </CardContent>
-        </Card>
+                  </label>
+                  <p className="text-xs text-gray-500">By submitting, you acknowledge that we are **not HVAC technicians** but an independent affiliate connecting customers with local service providers. See our <a href="/privacy-policy" className="underline">Privacy Policy</a> for details.</p>
+                  <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-2 rounded-lg hover:opacity-90">Find a Technician</Button>
+                </form>
+              )}
+            </CardContent>
+          </Card>
+        </div>
       </div>
       <Footer />
     </div>
